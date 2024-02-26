@@ -6,6 +6,8 @@ import com.example.boredapplication.data.remote.BoredApi
 import com.example.boredapplication.data.repository.ActionRepositoryImpl
 import com.example.boredapplication.domain.manger.LocalUserManger
 import com.example.boredapplication.domain.repository.ActionRepository
+import com.example.boredapplication.domain.use_cases.actions.ActionsUseCases
+import com.example.boredapplication.domain.use_cases.actions.GetRandomAction
 import com.example.boredapplication.domain.use_cases.app_entry.AppEntryUseCases
 import com.example.boredapplication.domain.use_cases.app_entry.ReadAppEntry
 import com.example.boredapplication.domain.use_cases.app_entry.SaveAppEntry
@@ -49,5 +51,13 @@ object AppModule {
     @Singleton
     fun provideActionRepository(api: BoredApi): ActionRepository {
         return ActionRepositoryImpl(api)
+    }
+
+    @Provides
+    @Singleton
+    fun provideActionsUseCases(actionRepository: ActionRepository): ActionsUseCases {
+        return ActionsUseCases(
+            getRandomAction = GetRandomAction(actionRepository)
+        )
     }
 }
