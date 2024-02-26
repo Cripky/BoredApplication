@@ -35,7 +35,7 @@ fun OnBoardingPage(
                 .fillMaxHeight(0.60f),
             painter = painterResource(id = page.image),
             contentDescription = "image1",
-            contentScale = ContentScale.Crop
+            contentScale = ContentScale.Inside
         )
         Spacer(modifier = Modifier.height(MediumPadding1))
         Text(
@@ -55,7 +55,7 @@ fun OnBoardingPagePreview() {
         OnBoardingPage(
             page = Page(
                 description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                image = R.drawable.doge
+                image = R.drawable.thinking
             )
         )
     }

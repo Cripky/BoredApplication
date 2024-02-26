@@ -10,15 +10,15 @@ data class Page(
 
 val pages = listOf(
     Page(
-        description = "Doge.",
-        image = R.drawable.doge_bread
+        description = "Do you have free time?",
+        image = R.drawable.time
     ),
     Page(
-        description = "More Doge.",
-        image = R.drawable.doge
+        description = "You don't know what to do?",
+        image = R.drawable.thinking
     ),
     Page(
-        description = "One more Doge.",
-        image = R.drawable.smiley_doge
+        description = "Try our app and find something you like \uD83D\uDE0A",
+        image = R.drawable.medal
     )
 )
